@@ -117,6 +117,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentControl" destination="HQN-9G-SRH" id="nQk-u5-XPQ"/>
+                        <outlet property="tableView" destination="I2y-7d-feW" id="hFL-HZ-0tg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
