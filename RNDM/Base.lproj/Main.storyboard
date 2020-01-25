@@ -49,6 +49,9 @@
                                     <segment title="Crazy"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="categoryChanged:" destination="RXk-mY-uqF" eventType="valueChanged" id="D8c-xJ-L0n"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-R4-yBn">
                                 <rect key="frame" x="20" y="147" width="374" height="34"/>
@@ -77,6 +80,9 @@
                                 <state key="normal" title="Post">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="postBtnTapped:" destination="RXk-mY-uqF" eventType="touchUpInside" id="WiA-h2-sh2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -96,6 +102,12 @@
                         <viewLayoutGuide key="safeArea" id="Dvy-21-RdU"/>
                     </view>
                     <navigationItem key="navigationItem" id="cj9-Km-ZFk"/>
+                    <connections>
+                        <outlet property="categorySegment" destination="gPv-iP-vza" id="f1Y-gX-o6r"/>
+                        <outlet property="postBtn" destination="GZe-ib-dIl" id="MDs-cR-LjV"/>
+                        <outlet property="throughtText" destination="3Dp-3q-dfa" id="wV9-Ir-OzN"/>
+                        <outlet property="userNameText" destination="dB4-R4-yBn" id="yEo-Ss-BAd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fK-cU-0lq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
