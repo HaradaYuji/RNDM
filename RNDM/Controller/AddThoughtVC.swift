@@ -53,15 +53,13 @@ class AddThoughtVC: UIViewController, UITextViewDelegate {
     @IBAction func postBtnTapped(_ sender: Any) {
         guard let username = userNameText.text else { return }
         guard let thoughtText = thoughtText.text else { return }
-        Firestore.firestore().collection("thoughts").addDocument(data: [
-            "category" : selectedCategory,
-            "numComments" : 0,
-            "numLikes" : 0,
-            // - FIXME: ちゃんとアンラップしたい
-            "thoughtText" : thoughtText,
-            "timestamp" : FieldValue.serverTimestamp(),
-            // - FIXME: ちゃんとアンラップしたい
-            "username" : username]) { (err) in
+        Firestore.firestore().collection(THOUGHT_REF).addDocument(data: [
+            CATEGORY : selectedCategory,
+            NUM_COMMENTS : 0,
+            NUM_LIKES : 0,
+            THOGUHT_TEXT : thoughtText,
+            TIMESTAMP : FieldValue.serverTimestamp(),
+            USERNAME : username]) { (err) in
             if let err = err {
                 debugPrint("Error adding document: \(err)")
             } else {

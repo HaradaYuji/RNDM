@@ -1,0 +1,19 @@
+//
+//  Constants.swift
+//  RNDM
+//
+//  Created by 原田悠嗣 on 2020/01/25.
+//  Copyright © 2020 原田悠嗣. All rights reserved.
+//
+
+import Foundation
+
+
+let THOUGHT_REF = "thoughts"
+
+let CATEGORY = "category"
+let NUM_COMMENTS = "numComments"
+let NUM_LIKES = "numLikes"
+let THOGUHT_TEXT = "thoughtText"
+let TIMESTAMP = "timestamp"
+let USERNAME = "username"

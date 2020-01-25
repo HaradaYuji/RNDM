@@ -16,6 +16,7 @@
 		DD0B8C3723D87AB500B76627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0B8C3523D87AB500B76627 /* LaunchScreen.storyboard */; };
 		DD0B8C3F23D87C9E00B76627 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD0B8C3E23D87C9E00B76627 /* GoogleService-Info.plist */; };
 		DD55911A23DBF060006A9C0C /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55911923DBF060006A9C0C /* AddThoughtVC.swift */; };
+		DD8CF39023DC3E750078D348 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CF38F23DC3E750078D348 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DD0B8C3823D87AB500B76627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD0B8C3E23D87C9E00B76627 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD55911923DBF060006A9C0C /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
+		DD8CF38F23DC3E750078D348 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FA1ECF95E458CB725260440E /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 		DD0B8C2923D87AB400B76627 /* RNDM */ = {
 			isa = PBXGroup;
 			children = (
+				DD8CF38E23DC3E610078D348 /* Utilities */,
 				DD55911C23DBF0D4006A9C0C /* Model */,
 				DD55911D23DBF0DD006A9C0C /* View */,
 				DD55911B23DBF0B5006A9C0C /* Controller */,
@@ -119,6 +122,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DD8CF38E23DC3E610078D348 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DD8CF38F23DC3E750078D348 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +251,7 @@
 				DD0B8C2F23D87AB400B76627 /* MainVC.swift in Sources */,
 				DD0B8C2B23D87AB400B76627 /* AppDelegate.swift in Sources */,
 				DD55911A23DBF060006A9C0C /* AddThoughtVC.swift in Sources */,
+				DD8CF39023DC3E750078D348 /* Constants.swift in Sources */,
 				DD0B8C2D23D87AB400B76627 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
