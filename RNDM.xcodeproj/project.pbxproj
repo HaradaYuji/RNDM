@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8AE38A4D0D9A34F83F028B80 /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1ECF95E458CB725260440E /* Pods_RNDM.framework */; };
 		DD0B8C2B23D87AB400B76627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B8C2A23D87AB400B76627 /* AppDelegate.swift */; };
 		DD0B8C2D23D87AB400B76627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B8C2C23D87AB400B76627 /* SceneDelegate.swift */; };
-		DD0B8C2F23D87AB400B76627 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B8C2E23D87AB400B76627 /* ViewController.swift */; };
+		DD0B8C2F23D87AB400B76627 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B8C2E23D87AB400B76627 /* MainVC.swift */; };
 		DD0B8C3223D87AB400B76627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0B8C3023D87AB400B76627 /* Main.storyboard */; };
 		DD0B8C3423D87AB500B76627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0B8C3323D87AB500B76627 /* Assets.xcassets */; };
 		DD0B8C3723D87AB500B76627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0B8C3523D87AB500B76627 /* LaunchScreen.storyboard */; };
 		DD0B8C3F23D87C9E00B76627 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD0B8C3E23D87C9E00B76627 /* GoogleService-Info.plist */; };
+		DD55911A23DBF060006A9C0C /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55911923DBF060006A9C0C /* AddThoughtVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +24,13 @@
 		DD0B8C2723D87AB400B76627 /* RNDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0B8C2A23D87AB400B76627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD0B8C2C23D87AB400B76627 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD0B8C2E23D87AB400B76627 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD0B8C2E23D87AB400B76627 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		DD0B8C3123D87AB400B76627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD0B8C3323D87AB500B76627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD0B8C3623D87AB500B76627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD0B8C3823D87AB500B76627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD0B8C3E23D87C9E00B76627 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD55911923DBF060006A9C0C /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
 		FA1ECF95E458CB725260440E /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,7 +52,6 @@
 				A53DCCEFB7B58CA0FECF7479 /* Pods-RNDM.debug.xcconfig */,
 				B480757135128AD9E1344F0C /* Pods-RNDM.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,9 +84,11 @@
 		DD0B8C2923D87AB400B76627 /* RNDM */ = {
 			isa = PBXGroup;
 			children = (
+				DD55911C23DBF0D4006A9C0C /* Model */,
+				DD55911D23DBF0DD006A9C0C /* View */,
+				DD55911B23DBF0B5006A9C0C /* Controller */,
 				DD0B8C2A23D87AB400B76627 /* AppDelegate.swift */,
 				DD0B8C2C23D87AB400B76627 /* SceneDelegate.swift */,
-				DD0B8C2E23D87AB400B76627 /* ViewController.swift */,
 				DD0B8C3023D87AB400B76627 /* Main.storyboard */,
 				DD0B8C3323D87AB500B76627 /* Assets.xcassets */,
 				DD0B8C3523D87AB500B76627 /* LaunchScreen.storyboard */,
@@ -93,6 +96,29 @@
 				DD0B8C3E23D87C9E00B76627 /* GoogleService-Info.plist */,
 			);
 			path = RNDM;
+			sourceTree = "<group>";
+		};
+		DD55911B23DBF0B5006A9C0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B8C2E23D87AB400B76627 /* MainVC.swift */,
+				DD55911923DBF060006A9C0C /* AddThoughtVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DD55911C23DBF0D4006A9C0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD55911D23DBF0DD006A9C0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +237,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD0B8C2F23D87AB400B76627 /* ViewController.swift in Sources */,
+				DD0B8C2F23D87AB400B76627 /* MainVC.swift in Sources */,
 				DD0B8C2B23D87AB400B76627 /* AppDelegate.swift in Sources */,
+				DD55911A23DBF060006A9C0C /* AddThoughtVC.swift in Sources */,
 				DD0B8C2D23D87AB400B76627 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

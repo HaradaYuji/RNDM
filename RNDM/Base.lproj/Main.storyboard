@@ -10,7 +10,7 @@
         <!--RNDM-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,14 +29,70 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Add ThoughtVC-->
         <scene sceneID="xia-I8-MSk">
             <objects>
-                <viewController id="RXk-mY-uqF" sceneMemberID="viewController">
+                <viewController id="RXk-mY-uqF" customClass="AddThoughtVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oQY-LT-BbW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gPv-iP-vza">
+                                <rect key="frame" x="20" y="103" width="374" height="33"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="24b-Hm-lBi"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Funny"/>
+                                    <segment title="Serious"/>
+                                    <segment title="Crazy"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-R4-yBn">
+                                <rect key="frame" x="20" y="147" width="374" height="34"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Dp-3q-dfa">
+                                <rect key="frame" x="20" y="193" width="374" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.15360124143835616" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hnA-Zj-00o"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZe-ib-dIl">
+                                <rect key="frame" x="177" y="301" width="60" height="35"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="3JX-15-mKI"/>
+                                    <constraint firstAttribute="height" constant="35" id="ZwE-M7-GrC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gPv-iP-vza" firstAttribute="top" secondItem="Dvy-21-RdU" secondAttribute="top" constant="15" id="3b9-vp-jF3"/>
+                            <constraint firstItem="dB4-R4-yBn" firstAttribute="top" secondItem="gPv-iP-vza" secondAttribute="bottom" constant="12" id="8Bo-HO-Z1Q"/>
+                            <constraint firstItem="GZe-ib-dIl" firstAttribute="top" secondItem="3Dp-3q-dfa" secondAttribute="bottom" constant="8" id="DEj-7C-MPs"/>
+                            <constraint firstItem="dB4-R4-yBn" firstAttribute="leading" secondItem="Dvy-21-RdU" secondAttribute="leading" constant="20" id="IsV-61-Eef"/>
+                            <constraint firstItem="3Dp-3q-dfa" firstAttribute="leading" secondItem="Dvy-21-RdU" secondAttribute="leading" constant="20" id="VaU-7B-hTv"/>
+                            <constraint firstItem="GZe-ib-dIl" firstAttribute="centerX" secondItem="oQY-LT-BbW" secondAttribute="centerX" id="b42-Us-xJu"/>
+                            <constraint firstItem="Dvy-21-RdU" firstAttribute="trailing" secondItem="dB4-R4-yBn" secondAttribute="trailing" constant="20" id="cmf-eo-7RV"/>
+                            <constraint firstItem="3Dp-3q-dfa" firstAttribute="top" secondItem="dB4-R4-yBn" secondAttribute="bottom" constant="12" id="r8k-ZD-skZ"/>
+                            <constraint firstItem="Dvy-21-RdU" firstAttribute="trailing" secondItem="gPv-iP-vza" secondAttribute="trailing" constant="20" id="rXm-hR-H0a"/>
+                            <constraint firstItem="gPv-iP-vza" firstAttribute="leading" secondItem="Dvy-21-RdU" secondAttribute="leading" constant="20" id="sVs-3r-PlF"/>
+                            <constraint firstItem="Dvy-21-RdU" firstAttribute="trailing" secondItem="3Dp-3q-dfa" secondAttribute="trailing" constant="20" id="wtj-UR-tYc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Dvy-21-RdU"/>
                     </view>
                     <navigationItem key="navigationItem" id="cj9-Km-ZFk"/>
