@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddThoughtVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class AddThoughtVC: UIViewController, UITextViewDelegate {
 
 
     // Outlets
@@ -19,7 +19,7 @@ class AddThoughtVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var postBtn: UIButton!
 
     // Variables
-    private var selectedCategory = "funny"
+    private var selectedCategory = ThoughtCategory.funny.rawValue
 
 
     override func viewDidLoad() {
@@ -32,10 +32,6 @@ class AddThoughtVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         thoughtText.delegate = self
     }
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-
-
-    }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = ""
@@ -43,9 +39,14 @@ class AddThoughtVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     }
 
     @IBAction func categoryChanged(_ sender: Any) {
-
-
-
+        switch categorySegment.selectedSegmentIndex {
+        case 0:
+            selectedCategory = ThoughtCategory.funny.rawValue
+        case 1:
+            selectedCategory = ThoughtCategory.serious.rawValue
+        default:
+            selectedCategory = ThoughtCategory.serious.rawValue
+        }
     }
 
 
