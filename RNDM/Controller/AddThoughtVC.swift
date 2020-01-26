@@ -13,10 +13,10 @@ class AddThoughtVC: UIViewController, UITextViewDelegate {
 
 
     // Outlets
-    @IBOutlet weak var categorySegment: UISegmentedControl!
-    @IBOutlet weak var userNameText: UITextField!
-    @IBOutlet weak var thoughtText: UITextView!
-    @IBOutlet weak var postBtn: UIButton!
+    @IBOutlet private weak var categorySegment: UISegmentedControl!
+    @IBOutlet private weak var userNameText: UITextField!
+    @IBOutlet private weak var thoughtText: UITextView!
+    @IBOutlet private weak var postBtn: UIButton!
 
     // Variables
     private var selectedCategory = ThoughtCategory.funny.rawValue
