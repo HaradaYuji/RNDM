@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 enum ThoughtCategory: String {
     case serious = "serious"
@@ -24,22 +25,46 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // Variobles
     private var thoughts = [Thought]()
+    private var thoughtsCollectionRef: CollectionReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        // 要勉強
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableView.automaticDimension
+
+        thoughtsCollectionRef = Firestore.firestore().collection(THOUGHT_REF)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        thoughtsCollectionRef.getDocuments { (snapshot, error) in
+            if let err = error {
+                debugPrint("Error fetching docs: \(err)")
+            } else {
+                for document in (snapshot?.documents)! {
+                    print(document.data())
+                }
+            }
+        }
 
     }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return thoughts.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
 
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "thoughtCell", for: indexPath) as? ThoughtCell {
+            cell.congfigureCell(thought: thoughts[indexPath.row])
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
 }
 
