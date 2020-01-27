@@ -22,7 +22,6 @@ class ThoughtCell: UITableViewCell {
     // Variables
     private var thought: Thought!
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -34,19 +33,14 @@ class ThoughtCell: UITableViewCell {
 
     @objc func likeTapped() {
 
-        // method1
-        Firestore.firestore().collection(THOUGHT_REF).document(thought.documentId)
-            // mergeで情報が新規ではなく更新される
-            .setData([NUM_LIKES : thought.numLikes + 1], merge: true)
+//        // method1
+//        Firestore.firestore().collection(THOUGHT_REF).document(thought.documentId)
+//            // mergeで情報が新規ではなく更新される
+//            .setData([NUM_LIKES : thought.numLikes + 1], merge: true)
 
 
         // method2
-
-
-
-
-
-
+        Firestore.firestore().document("thoughts/\(thought.documentId!)").updateData([NUM_LIKES : thought.numLikes + 1])
     }
 
     func congfigureCell(thought: Thought) {
