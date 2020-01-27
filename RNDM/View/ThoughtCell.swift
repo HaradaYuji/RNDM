@@ -34,10 +34,13 @@ class ThoughtCell: UITableViewCell {
 
     @objc func likeTapped() {
 
-        Firestore.firestore().collection(THOUGHT_REF)
-            .document(thought.documentId)
-            .setData([NUM_LIKES : thought.numLikes + 1], options: SetOptions.merge())
+        // method1
+        Firestore.firestore().collection(THOUGHT_REF).document(thought.documentId)
+            // mergeで情報が新規ではなく更新される
+            .setData([NUM_LIKES : thought.numLikes + 1], merge: true)
 
+
+        // method2
 
 
 
@@ -47,6 +50,8 @@ class ThoughtCell: UITableViewCell {
     }
 
     func congfigureCell(thought: Thought) {
+
+        self.thought = thought
 
         usernameLabel.text = thought.username
         thoughtTextLabel.text = thought.thoughtText

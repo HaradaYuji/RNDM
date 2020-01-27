@@ -36,10 +36,12 @@ class Thought {
         guard let snap = snapshot else { return thoughts }
         for document in (snap.documents) {
             let data = document.data()
-            let username = data["username"] as? String ?? "Anonymous"
-            let timestamp = data["timestamp"] as? Date ?? Date()
-            let thoughtText = data["thoughtText"] as? String ?? "Anonymous"
+            let username = data[USERNAME] as? String ?? "Anonymous"
+            let timestamp = data[TIMESTAMP] as? Date ?? Date()
+            print("**\(timestamp)")
+            let thoughtText = data[THOUGHT_TEXT] as? String ?? "Anonymous"
             let numLikes = data[NUM_LIKES] as? Int ?? 0
+            print("**\(numLikes)")
             let numComments = data[NUM_COMMENTS] as? Int ?? 0
             let documentId = document.documentID
 

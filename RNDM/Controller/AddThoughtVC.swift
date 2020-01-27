@@ -57,7 +57,7 @@ class AddThoughtVC: UIViewController, UITextViewDelegate {
             CATEGORY : selectedCategory,
             NUM_COMMENTS : 0,
             NUM_LIKES : 0,
-            THOGUHT_TEXT : thoughtText,
+            THOUGHT_TEXT : thoughtText,
             TIMESTAMP : FieldValue.serverTimestamp(),
             USERNAME : username]) { (err) in
             if let err = err {
