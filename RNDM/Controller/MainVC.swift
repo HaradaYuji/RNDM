@@ -63,28 +63,62 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         setListerner()    }
 
     private func setListerner() {
-        // listernerの実装
-        thoughtsListener = thoughtsCollectionRef.whereField(CATEGORY, isEqualTo: selectedCategory).addSnapshotListener { (snapshot, error) in
-            if let err = error {
-                debugPrint("Error fetching docs: \(err)")
-            } else {
-                // 初期化
-                self.thoughts.removeAll()
-                guard let snap = snapshot else { return }
-                for document in (snap.documents) {
-                    let data = document.data()
-                    let username = data["username"] as? String ?? "Anonymous"
-                    let timestamp = data["timestamp"] as? Date ?? Date()
-                    let thoughtText = data["thoughtText"] as? String ?? "Anonymous"
-                    let numLikes = data[NUM_LIKES] as? Int ?? 0
-                    let numComments = data[NUM_COMMENTS] as? Int ?? 0
-                    let documentId = document.documentID
+
+        if selectedCategory == ThoughtCategory.popular.rawValue {
+            // listernerの実装
+            thoughtsListener = thoughtsCollectionRef
+                .order(by: NUM_LIKES, descending: true)
+                .addSnapshotListener { (snapshot, error) in
+                    if let err = error {
+                    debugPrint("Error fetching docs: \(err)")
+                } else {
+                    // 初期化
+                    self.thoughts.removeAll()
+                    guard let snap = snapshot else { return }
+                    for document in (snap.documents) {
+                        let data = document.data()
+                        let username = data["username"] as? String ?? "Anonymous"
+                        let timestamp = data["timestamp"] as? Date ?? Date()
+                        let thoughtText = data["thoughtText"] as? String ?? "Anonymous"
+                        let numLikes = data[NUM_LIKES] as? Int ?? 0
+                        let numComments = data[NUM_COMMENTS] as? Int ?? 0
+                        let documentId = document.documentID
 
 
-                    let newThought = Thought(username: username, timestamp: timestamp, thoughText: thoughtText, numLikes: numLikes, numComments: numComments, documentId: documentId)
-                    self.thoughts.append(newThought)
+                        let newThought = Thought(username: username, timestamp: timestamp, thoughText: thoughtText, numLikes: numLikes, numComments: numComments, documentId: documentId)
+                        self.thoughts.append(newThought)
+                    }
+                    self.tableView.reloadData()
                 }
-                self.tableView.reloadData()
+            }
+        } else {
+            // listernerの実装
+            thoughtsListener = thoughtsCollectionRef
+                .whereField(CATEGORY, isEqualTo: selectedCategory)
+            // order(by: String, descending: true)
+            .order(by: TIMESTAMP, descending: true)
+                .addSnapshotListener { (snapshot, error) in
+                if let err = error {
+                    debugPrint("Error fetching docs: \(err)")
+                } else {
+                    // 初期化
+                    self.thoughts.removeAll()
+                    guard let snap = snapshot else { return }
+                    for document in (snap.documents) {
+                        let data = document.data()
+                        let username = data["username"] as? String ?? "Anonymous"
+                        let timestamp = data["timestamp"] as? Date ?? Date()
+                        let thoughtText = data["thoughtText"] as? String ?? "Anonymous"
+                        let numLikes = data[NUM_LIKES] as? Int ?? 0
+                        let numComments = data[NUM_COMMENTS] as? Int ?? 0
+                        let documentId = document.documentID
+
+
+                        let newThought = Thought(username: username, timestamp: timestamp, thoughText: thoughtText, numLikes: numLikes, numComments: numComments, documentId: documentId)
+                        self.thoughts.append(newThought)
+                    }
+                    self.tableView.reloadData()
+                }
             }
         }
     }
