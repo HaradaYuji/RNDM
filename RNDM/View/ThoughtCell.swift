@@ -33,13 +33,13 @@ class ThoughtCell: UITableViewCell {
 
     @objc func likeTapped() {
 
-//        // method1
+//        // method1(merge)
 //        Firestore.firestore().collection(THOUGHT_REF).document(thought.documentId)
 //            // mergeで情報が新規ではなく更新される
 //            .setData([NUM_LIKES : thought.numLikes + 1], merge: true)
 
 
-        // method2
+        // method2(update)やっていることは1と同じ
         Firestore.firestore().document("thoughts/\(thought.documentId!)").updateData([NUM_LIKES : thought.numLikes + 1])
     }
 

@@ -58,7 +58,7 @@ class AddThoughtVC: UIViewController, UITextViewDelegate {
             NUM_COMMENTS : 0,
             NUM_LIKES : 0,
             THOUGHT_TEXT : thoughtText,
-            TIMESTAMP : FieldValue.serverTimestamp(),
+            TIMESTAMP : Timestamp(date: Date()),//FieldValue.serverTimestamp(),
             USERNAME : username]) { (err) in
             if let err = err {
                 debugPrint("Error adding document: \(err)")

@@ -11,7 +11,6 @@ import Firebase
 
 class Thought {
 
-
     private(set) var username: String!
     private(set) var timestamp: Date!
     private(set) var thoughtText: String!
@@ -37,16 +36,15 @@ class Thought {
         for document in (snap.documents) {
             let data = document.data()
             let username = data[USERNAME] as? String ?? "Anonymous"
-            let timestamp = data[TIMESTAMP] as? Date ?? Date()
-            print("**\(timestamp)")
+            // まずタイムスタンプ型で取得し
+            let timestamp = data[TIMESTAMP] as? Timestamp ?? Timestamp()
+            // Date型に変換する必要があるっぽい
+            let dateTimestamp: Date = timestamp.dateValue()
             let thoughtText = data[THOUGHT_TEXT] as? String ?? "Anonymous"
             let numLikes = data[NUM_LIKES] as? Int ?? 0
-            print("**\(numLikes)")
             let numComments = data[NUM_COMMENTS] as? Int ?? 0
             let documentId = document.documentID
-
-
-            let newThought = Thought(username: username, timestamp: timestamp, thoughText: thoughtText, numLikes: numLikes, numComments: numComments, documentId: documentId)
+            let newThought = Thought(username: username, timestamp: dateTimestamp, thoughText: thoughtText, numLikes: numLikes, numComments: numComments, documentId: documentId)
             thoughts.append(newThought)
         }
         return thoughts
