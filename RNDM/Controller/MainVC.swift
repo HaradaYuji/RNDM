@@ -23,10 +23,11 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet private weak var segmentControl: UISegmentedControl!
     @IBOutlet private weak var tableView: UITableView!
 
-    // Variobles
+    // Variables
     private var thoughts = [Thought]()
     private var thoughtsCollectionRef: CollectionReference!
     private var thoughtsListener: ListenerRegistration!
+    private var selectedCategory = ThoughtCategory.funny.rawValue
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +41,30 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         thoughtsCollectionRef = Firestore.firestore().collection(THOUGHT_REF)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
 
+    @IBAction func categoryChanged(_ sender: Any) {
+
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            selectedCategory = ThoughtCategory.funny.rawValue
+        case 1:
+            selectedCategory = ThoughtCategory.serious.rawValue
+        case 2:
+            selectedCategory = ThoughtCategory.crazy.rawValue
+        default:
+            selectedCategory = ThoughtCategory.popular.rawValue
+        }
+
+        thoughtsListener.remove()
+        setListerner()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        setListerner()    }
+
+    private func setListerner() {
         // listernerの実装
-        thoughtsListener = thoughtsCollectionRef.addSnapshotListener { (snapshot, error) in
+        thoughtsListener = thoughtsCollectionRef.whereField(CATEGORY, isEqualTo: selectedCategory).addSnapshotListener { (snapshot, error) in
             if let err = error {
                 debugPrint("Error fetching docs: \(err)")
             } else {

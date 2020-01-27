@@ -31,6 +31,7 @@
                                 <color key="selectedSegmentTintColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="categoryChanged:" destination="RXk-mY-uqF" eventType="valueChanged" id="TSZ-Vt-wJO"/>
+                                    <action selector="categoryChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="dpH-Mq-cee"/>
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I2y-7d-feW">
