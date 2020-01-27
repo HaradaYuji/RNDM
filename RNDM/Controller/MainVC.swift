@@ -26,6 +26,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // Variobles
     private var thoughts = [Thought]()
     private var thoughtsCollectionRef: CollectionReference!
+    private var thoughtsListener: ListenerRegistration!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +41,14 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        thoughtsCollectionRef.getDocuments { (snapshot, error) in
+
+        // listernerの実装
+        thoughtsListener = thoughtsCollectionRef.addSnapshotListener { (snapshot, error) in
             if let err = error {
                 debugPrint("Error fetching docs: \(err)")
             } else {
+                // 初期化
+                self.thoughts.removeAll()
                 guard let snap = snapshot else { return }
                 for document in (snap.documents) {
                     let data = document.data()
@@ -61,6 +66,11 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 self.tableView.reloadData()
             }
         }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        // リスナを解放
+        thoughtsListener.remove()
     }
 
 

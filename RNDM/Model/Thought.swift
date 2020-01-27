@@ -22,7 +22,7 @@ class Thought {
         self.username = username
         self.timestamp = timestamp
         self.thoughtText = thoughText
-        self.numLikes = numComments
+        self.numLikes = numLikes
         self.numComments = numComments
         self.documentId = documentId
     }
