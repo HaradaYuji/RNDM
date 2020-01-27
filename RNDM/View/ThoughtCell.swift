@@ -26,8 +26,10 @@ class ThoughtCell: UITableViewCell {
 
     func congfigureCell(thought: Thought) {
 
+        usernameLabel.text = thought.username
+        thoughtTextLabel.text = thought.thoughtText
+        likesNumLabel.text = String(thought.numLikes)
 
-        
     }
 
 }
