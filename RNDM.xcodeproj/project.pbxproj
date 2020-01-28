@@ -16,6 +16,7 @@
 		DD0B8C3723D87AB500B76627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0B8C3523D87AB500B76627 /* LaunchScreen.storyboard */; };
 		DD0B8C3F23D87C9E00B76627 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD0B8C3E23D87C9E00B76627 /* GoogleService-Info.plist */; };
 		DD55911A23DBF060006A9C0C /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55911923DBF060006A9C0C /* AddThoughtVC.swift */; };
+		DD5DD5B723E08AE0007A9502 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5DD5B623E08AE0007A9502 /* LoginVC.swift */; };
 		DD8CF39023DC3E750078D348 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CF38F23DC3E750078D348 /* Constants.swift */; };
 		DD8CF39223DD2DCB0078D348 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CF39123DD2DCB0078D348 /* Thought.swift */; };
 		DD8CF39423DD377B0078D348 /* ThoughtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CF39323DD377B0078D348 /* ThoughtCell.swift */; };
@@ -34,6 +35,7 @@
 		DD0B8C3823D87AB500B76627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD0B8C3E23D87C9E00B76627 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD55911923DBF060006A9C0C /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
+		DD5DD5B623E08AE0007A9502 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DD8CF38F23DC3E750078D348 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD8CF39123DD2DCB0078D348 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 		DD8CF39323DD377B0078D348 /* ThoughtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCell.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				DD0B8C2E23D87AB400B76627 /* MainVC.swift */,
 				DD55911923DBF060006A9C0C /* AddThoughtVC.swift */,
+				DD5DD5B623E08AE0007A9502 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				DD0B8C2F23D87AB400B76627 /* MainVC.swift in Sources */,
 				DD0B8C2B23D87AB400B76627 /* AppDelegate.swift in Sources */,
+				DD5DD5B723E08AE0007A9502 /* LoginVC.swift in Sources */,
 				DD55911A23DBF060006A9C0C /* AddThoughtVC.swift in Sources */,
 				DD8CF39223DD2DCB0078D348 /* Thought.swift in Sources */,
 				DD8CF39023DC3E750078D348 /* Constants.swift in Sources */,

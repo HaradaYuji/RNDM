@@ -218,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="1752" y="89"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="NRs-2H-Eom">
             <objects>
-                <viewController id="5Ql-EY-K2g" sceneMemberID="viewController">
+                <viewController id="5Ql-EY-K2g" customClass="LoginVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1vq-Si-ahH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,6 +257,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtnTapped:" destination="5Ql-EY-K2g" eventType="touchUpInside" id="4WD-tm-8UD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwG-aS-Tum">
                                 <rect key="frame" x="132" y="231" width="150" height="20"/>
@@ -275,6 +278,9 @@
                                 <state key="normal" title="Create User">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createUserTapped:" destination="5Ql-EY-K2g" eventType="touchUpInside" id="OKQ-om-bfY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -294,6 +300,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pQh-1O-D8y"/>
                     </view>
+                    <connections>
+                        <outlet property="createUserBtn" destination="Ehe-Ja-Kbg" id="XB4-vH-SlC"/>
+                        <outlet property="emailText" destination="w7A-0b-BfX" id="j8p-Nn-kYZ"/>
+                        <outlet property="loginBtn" destination="Ixd-as-Ycr" id="r79-N6-XQf"/>
+                        <outlet property="passwordText" destination="jyx-9o-wcL" id="5XC-AR-yn9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEC-aD-zIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
