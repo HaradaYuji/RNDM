@@ -311,10 +311,10 @@
             </objects>
             <point key="canvasLocation" x="124.6376811594203" y="-733.25892857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Create UserVC-->
         <scene sceneID="Dc0-0N-okH">
             <objects>
-                <viewController id="l0U-3c-u0R" sceneMemberID="viewController">
+                <viewController id="l0U-3c-u0R" customClass="CreateUserVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vrE-rM-KQg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,11 +329,11 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xy6-uz-jFh">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xy6-uz-jFh">
                                 <rect key="frame" x="20" y="106" width="374" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.1167861729" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="aoi-yQ-Cwo"/>
+                                    <constraint firstAttribute="height" constant="30" id="2M4-XE-U29"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
@@ -350,6 +350,9 @@
                                 <state key="normal" title="Create User">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createTapped:" destination="l0U-3c-u0R" eventType="touchUpInside" id="wcE-Ac-QxQ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username: public" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfG-C9-t3B">
                                 <rect key="frame" x="20" y="152" width="374" height="30"/>
@@ -372,6 +375,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="l0U-3c-u0R" eventType="touchUpInside" id="w2E-jr-Hyn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -386,10 +392,19 @@
                             <constraint firstItem="xy6-uz-jFh" firstAttribute="top" secondItem="2gW-It-ZBO" secondAttribute="bottom" constant="16" id="ZAw-i3-Ef3"/>
                             <constraint firstItem="JgT-KA-bEe" firstAttribute="centerX" secondItem="vrE-rM-KQg" secondAttribute="centerX" id="aaq-VC-8oQ"/>
                             <constraint firstItem="2gW-It-ZBO" firstAttribute="top" secondItem="UQS-Vo-lbv" secondAttribute="top" constant="16" id="dn6-dI-Qg2"/>
+                            <constraint firstItem="UQS-Vo-lbv" firstAttribute="trailing" secondItem="xy6-uz-jFh" secondAttribute="trailing" constant="20" id="oYV-13-1zJ"/>
                             <constraint firstItem="UQS-Vo-lbv" firstAttribute="trailing" secondItem="2gW-It-ZBO" secondAttribute="trailing" constant="20" id="pdN-Bw-I97"/>
+                            <constraint firstItem="xy6-uz-jFh" firstAttribute="leading" secondItem="UQS-Vo-lbv" secondAttribute="leading" constant="20" id="vbC-t7-KM6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UQS-Vo-lbv"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="JgT-KA-bEe" id="8Ta-IY-uBq"/>
+                        <outlet property="createBtn" destination="2nH-HB-3VU" id="S16-q7-xVx"/>
+                        <outlet property="emailText" destination="2gW-It-ZBO" id="07C-2g-PlC"/>
+                        <outlet property="passwordText" destination="xy6-uz-jFh" id="J3b-7D-Yzu"/>
+                        <outlet property="usernameText" destination="hfG-C9-t3B" id="GnB-Ph-OqT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBk-hL-6cY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
